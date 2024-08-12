@@ -1,0 +1,27 @@
+int output_1 = 11; // Pin number for Phase 1 output
+int output_2 = 12; // Pin number for Phase 2 output
+int output_3 = 13; // Pin number for Phase 3 output
+int t = 3310; // Delay time in microseconds
+
+void setup()
+{
+  pinMode (output_1, OUTPUT); // Set Phase 1 pin as output
+  pinMode (output_2, OUTPUT); // Set Phase 2 pin as output
+  pinMode (output_3, OUTPUT); // Set Phase 3 pin as output
+}
+
+void loop()
+{
+  delayMicroseconds (t); // Delay for 't' microseconds
+  digitalWrite(output_1, LOW); // Set Phase 1 output pin to LOW
+  delayMicroseconds (t); // Delay for 't' microseconds
+  digitalWrite(output_2, HIGH); // Set Phase 2 output pin to HIGH
+  delayMicroseconds (t); // Delay for 't' microseconds
+  digitalWrite(output_3, LOW); // Set Phase 3 output pin to LOW
+  delayMicroseconds (t); // Delay for 't' microseconds
+  digitalWrite(output_1, HIGH); // Set Phase 1 output pin to HIGH
+  delayMicroseconds (t); // Delay for 't' microseconds
+  digitalWrite(output_2, LOW); // Set Phase 2 output pin to LOW
+  delayMicroseconds (t); // Delay for 't' microseconds
+  digitalWrite(output_3, HIGH); // Set Phase 3 output pin to HIGH
+}
